@@ -83,6 +83,7 @@ public class SlowdownArea : MonoBehaviour
             rigidbody2d.velocity = rigidbody2d.velocity.normalized * newSpeed;
             yield return new WaitForEndOfFrame();
         }
-        _enteredProjectiles.Remove(rigidbody2d);
+
+        if (rigidbody2d != null) _enteredProjectiles.Remove(rigidbody2d);
     }
 }
