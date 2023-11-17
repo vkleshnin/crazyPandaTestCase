@@ -165,10 +165,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 223536742}
+  - component: {fileID: 223536738}
   - component: {fileID: 223536741}
   - component: {fileID: 223536743}
   - component: {fileID: 223536739}
-  - component: {fileID: 223536738}
   m_Layer: 0
   m_Name: SlowdownArea
   m_TagString: Untagged
@@ -189,7 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowdownFactor: 0.1
-  disableGravity: 1
+  disableGravity: 0
+  slowdownGravity: 1
 --- !u!58 &223536739
 CircleCollider2D:
   m_ObjectHideFlags: 0
