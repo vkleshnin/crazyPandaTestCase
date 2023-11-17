@@ -12,6 +12,9 @@ public class SlowdownArea : MonoBehaviour
     
     [Tooltip("Замедлить гравитацию.")][SerializeField]
     private bool slowdownGravity = true;
+
+    [Tooltip("Вернуть изначальную скорость.")] [SerializeField]
+    private bool returnSpeed = true;
     
     private readonly Dictionary<Rigidbody2D, float> _enteredProjectiles = new ();
 
@@ -66,7 +69,8 @@ public class SlowdownArea : MonoBehaviour
         var projectileRigidbody = other.GetComponent<Rigidbody2D>();
         if (projectileRigidbody == null || !_enteredProjectiles.ContainsKey(projectileRigidbody)) return;
         
-        StartCoroutine(RestoreSpeed(projectileRigidbody, _enteredProjectiles[projectileRigidbody]));
+        if (returnSpeed)
+            StartCoroutine(RestoreSpeed(projectileRigidbody, _enteredProjectiles[projectileRigidbody]));
         _enteredProjectiles.Remove(projectileRigidbody);
         
         if (disableGravity)
