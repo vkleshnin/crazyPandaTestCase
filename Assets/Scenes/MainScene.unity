@@ -189,8 +189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowdownFactor: 0.1
-  disableGravity: 0
-  slowdownGravity: 1
 --- !u!58 &223536739
 CircleCollider2D:
   m_ObjectHideFlags: 0
